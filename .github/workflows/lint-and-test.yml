@@ -8,11 +8,24 @@ jobs:
 
     steps:
    
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'npm'
+      - run: npm ci
+      - run npm test
       - run: make setup
       - run: make lint
       - name: run test
         run: make test
 
-  
-      
+      - name: snyk check code
+        uses: snyk/actions/node@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          args: --severity-threshold=hight
+
+     
+        
