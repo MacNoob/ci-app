@@ -9,9 +9,11 @@ jobs:
     steps:
    
       - uses: actions/checkout@v2
+        with:
+          node-version: 14
+          cache: 'npm'
       - run: npm ci
       - run: npm test
-        cache: 'npm'
       - run: make setup
       - run: make lint
       - name: run test
