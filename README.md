@@ -1,6 +1,6 @@
 [![lint-and-test-ci-app](https://github.com/MacNoob/ci-app/actions/workflows/lint-and-test.yml/badge.svg)](https://github.com/MacNoob/ci-app/actions/workflows/lint-and-test.yml)
 
-# Example app for CI Hexlet Courses
+# Example app for CI Hexlet course
 
 Starting boilerplate of [Strapi](https://strapi.io/) application
 
